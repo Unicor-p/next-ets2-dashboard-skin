@@ -1,0 +1,19 @@
+{
+  "semi": true,
+  "trailingComma": "none",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "importOrder" : [
+    "^@/sdk(.*)$",
+    "^@/components/(.*)$",
+    "^@/features/(.*)$",
+    "^@/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "vueIndentScriptAndStyle": true,
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports"
+  ]
+}
