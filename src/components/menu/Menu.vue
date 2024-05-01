@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <nav class="flex justify-between py-2 fixed top-0 w-full">
+  <nav class="flex justify-between py-2 fixed top-0 w-full h-16">
     <div class="flex justify-start items-center mx-2 w-full space-x-2">
       <slot name="left" />
     </div>

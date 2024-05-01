@@ -2,10 +2,10 @@
   import Icon from '@/components/Icon.vue';
 
   type Props = {
-    direction: 'left' | 'right';
+    direction?: 'left' | 'right';
     icon: string;
-    active: boolean;
-    expended: boolean;
+    active?: boolean;
+    expended?: boolean;
   };
 
   const props = withDefaults(defineProps<Props>(), {
@@ -14,6 +14,8 @@
     expended: false
   });
 </script>
+
+<!-- TODO: Transform to Button -->
 
 <template>
   <div
@@ -37,7 +39,7 @@
         '-translate-x-[150%]': props.direction === 'left',
         'translate-x-[150%]': props.direction === 'right',
         'opacity-100 !translate-x-0 w-32': props.active,
-        'opacity-100 translate-x-0 w-32 xl:opacity-0 xl:w-0':
+        'opacity-100 !translate-x-0 w-32 xl:opacity-0 xl:w-0':
           props.expended && !props.active
       }"
     >

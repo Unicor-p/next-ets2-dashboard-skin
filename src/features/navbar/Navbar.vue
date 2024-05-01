@@ -29,10 +29,15 @@
       </div>
     </template>
     <template #right>
-      <MenuBadge icon="target" direction="right" :active="true">
+      <MenuBadge
+        icon="target"
+        direction="right"
+        :active="true"
+        :expended="true"
+      >
         {{ $t('Fullscreen') }}
       </MenuBadge>
-      <MenuBadge icon="menu" direction="right">
+      <MenuBadge icon="menu" direction="right" :expended="true">
         {{ $t('Menu') }}
       </MenuBadge>
     </template>
