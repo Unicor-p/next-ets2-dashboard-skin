@@ -1,10 +1,9 @@
 <script setup lang="ts">
-  import Menu from '@/components/menu/Menu.vue';
+  import Navbar from '@/features/navbar/Navbar.vue';
 </script>
 
 <template>
   <header>
-    <Menu />
-    <!--    <Icon name="brakes_temperature" class="w-16 h-16" />-->
+    <Navbar />
   </header>
 </template>

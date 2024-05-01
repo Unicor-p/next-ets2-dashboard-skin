@@ -1,25 +1,15 @@
-<script setup lang="ts">
-  import MenuBadge from '@/components/menu/MenuBadge.vue';
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <nav class="flex justify-between py-2">
+  <nav class="flex justify-between py-2 fixed top-0 w-full">
     <div class="flex justify-start items-center mx-2 w-full space-x-2">
-      <MenuBadge icon="target" :expended="true">v2.0.0</MenuBadge>
-      <MenuBadge icon="target" :expended="true">v1.44.1.5</MenuBadge>
+      <slot name="left" />
     </div>
     <div class="flex-none">
-      <div class="bg-gradient-accent text-white rounded-3xl px-4 py-2 text-2xl">
-        Mon 04:55 AM
-      </div>
+      <slot name="center" />
     </div>
     <div class="flex justify-end items-center mx-2 w-full space-x-2">
-      <MenuBadge icon="target" direction="right" :active="true">
-        {{ $t('Fullscreen') }}
-      </MenuBadge>
-      <MenuBadge icon="menu" direction="right">
-        {{ $t('Menu') }}
-      </MenuBadge>
+      <slot name="right" />
     </div>
   </nav>
 </template>

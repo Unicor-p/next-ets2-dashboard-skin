@@ -2,6 +2,7 @@
   content: ['./index.html', './src/**/*.{vue,ts}'],
   theme: {
     colors: {
+      transparent: 'transparent',
       blue: '#26d2e2',
       'blue-marin': '#122333',
       'blue-light': '#293744',

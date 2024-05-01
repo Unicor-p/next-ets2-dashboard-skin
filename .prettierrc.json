@@ -4,6 +4,7 @@
   "singleQuote": true,
   "tabWidth": 2,
   "importOrder" : [
+    "^@/assets/(.*)$",
     "^@/sdk(.*)$",
     "^@/vendor/(.*)$",
     "^@/components/(.*)$",
