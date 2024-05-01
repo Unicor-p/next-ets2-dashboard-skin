@@ -1,17 +1,17 @@
 {
   "env": {
     "node": true,
-    "jest": true
+    "jest": true,
+    "browser": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:vue/vue3-recommended",
     "@vue/typescript/recommended",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "plugins" : [
-    "prettier",
     "@typescript-eslint"
   ],
   "parser": "vue-eslint-parser",
@@ -38,7 +38,6 @@
     }],
     "vue/script-indent": ["error", 2, {
       "baseIndent": 1
-    }],
-    "prettier/prettier":  "error"
+    }]
   }
 }

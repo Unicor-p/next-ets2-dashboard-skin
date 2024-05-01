@@ -15,5 +15,6 @@
   "vueIndentScriptAndStyle": true,
   "plugins": [
     "@trivago/prettier-plugin-sort-imports"
-  ]
+  ],
+  "bracketSameLine": false
 }

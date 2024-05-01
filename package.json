@@ -11,10 +11,11 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint:eslint": "npx eslint *.{js,vue,ts} src/**/*.{js,vue,ts} --fix --ignore-path .gitignore",
-    "lint:prettier": "npx prettier *.{js,vue,ts} src/**/*.{js,vue,ts} --write",
+    "lint:prettier": "npx prettier *.{js,vue,ts} src/**/*.{js,vue,ts} -w",
     "lint": "npm run lint:eslint && npm run lint:prettier"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.4.21"
   },
