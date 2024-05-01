@@ -15,9 +15,11 @@
     </div>
     <div class="flex justify-end items-center mx-2 w-full space-x-2">
       <MenuBadge icon="target" direction="right" :active="true">
-        Plein écran
+        {{ $t('Fullscreen') }}
       </MenuBadge>
-      <MenuBadge icon="menu" direction="right">Menu</MenuBadge>
+      <MenuBadge icon="menu" direction="right">
+        {{ $t('Menu') }}
+      </MenuBadge>
     </div>
   </nav>
 </template>

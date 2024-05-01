@@ -5,6 +5,7 @@
   "tabWidth": 2,
   "importOrder" : [
     "^@/sdk(.*)$",
+    "^@/vendor/(.*)$",
     "^@/components/(.*)$",
     "^@/features/(.*)$",
     "^@/(.*)$",

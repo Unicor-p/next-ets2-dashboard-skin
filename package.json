@@ -15,6 +15,7 @@
     "lint": "npm run lint:eslint && npm run lint:prettier"
   },
   "dependencies": {
+    "@modyfi/vite-plugin-yaml": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "vite-svg-loader": "^5.1.0",
     "vue": "^3.4.21"

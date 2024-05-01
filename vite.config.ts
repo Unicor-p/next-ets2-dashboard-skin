@@ -1,3 +1,4 @@
+import ViteYaml from '@modyfi/vite-plugin-yaml';
 import vue from '@vitejs/plugin-vue';
 import { URL, fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
@@ -9,7 +10,7 @@ export default defineConfig({
     port: 9000,
     cors: false
   },
-  plugins: [vue(), svgLoader()],
+  plugins: [vue(), svgLoader(), ViteYaml()],
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

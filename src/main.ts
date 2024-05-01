@@ -1,6 +1,8 @@
 import { createApp } from 'vue';
 
-import App from './App.vue';
-import './assets/css/main.css';
+import TranslatorPlugin from '@/vendor/translator/translator.plugin';
 
-createApp(App).mount('#app');
+import App from '@/App.vue';
+import '@/assets/css/main.css';
+
+createApp(App).use(TranslatorPlugin).mount('#app');
