@@ -2,6 +2,8 @@
   import { type UseSwipeDirection, useSwipe } from '@vueuse/core';
   import { ref } from 'vue';
 
+  import { useFullscreen } from '@/vendor/fullscreen/useFullscreen';
+
   import Button from '@/components/Button.vue';
   import Menu from '@/components/Menu.vue';
 
@@ -20,6 +22,8 @@
       }
     }
   });
+
+  const { toggleFullscreen, isOnFullscreen } = useFullscreen();
 </script>
 
 <template>
@@ -44,8 +48,13 @@
         </div>
       </template>
       <template #right>
-        <Button icon="target" direction="right" :active="true"
-:expended="true">
+        <Button
+          icon="target"
+          direction="right"
+          :active="isOnFullscreen"
+          :expended="true"
+          @click="toggleFullscreen"
+        >
           {{ $t('Fullscreen') }}
         </Button>
         <Button
