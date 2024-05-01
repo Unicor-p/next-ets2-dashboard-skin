@@ -2,23 +2,24 @@
   import Icon from '@/components/Icon.vue';
 
   type Props = {
-    direction?: 'left' | 'right';
     icon: string;
+    direction?: 'left' | 'right';
+    as?: string;
     active?: boolean;
     expended?: boolean;
   };
 
   const props = withDefaults(defineProps<Props>(), {
     direction: 'left',
+    as: 'button',
     active: false,
     expended: false
   });
 </script>
 
-<!-- TODO: Transform to Button -->
-
 <template>
-  <div
+  <component
+    :is="as"
     class="backdrop-blur-xl bg-beige/5 text-white rounded-3xl flex justify-center items-center text-base group overflow-hidden hover:bg-white/25 hover:cursor-pointer focus:bg-white/25 focus:cursor-pointer"
     :class="{
       'flex-row-reverse': props.direction === 'right',
@@ -47,5 +48,5 @@
         <slot />
       </span>
     </div>
-  </div>
+  </component>
 </template>

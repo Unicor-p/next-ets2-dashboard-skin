@@ -15,6 +15,7 @@
     "lint": "npm run lint:eslint && npm run lint:prettier"
   },
   "dependencies": {
+    "@headlessui/vue": "^1.7.21",
     "@modyfi/vite-plugin-yaml": "^1.1.0",
     "@vueuse/core": "^10.9.0",
     "class-variance-authority": "^0.7.0",
