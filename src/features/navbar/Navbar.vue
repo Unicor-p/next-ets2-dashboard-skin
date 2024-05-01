@@ -1,18 +1,29 @@
 <script setup lang="ts">
+  import { type UseSwipeDirection, useSwipe } from '@vueuse/core';
   import { ref } from 'vue';
 
   import Button from '@/components/Button.vue';
-  import Icon from '@/components/Icon.vue';
   import Menu from '@/components/Menu.vue';
 
   import NavbarOverlay from '@/features/navbar/NavbarOverlay.vue';
 
   const showDiscreteNavbar = ref<boolean>(false);
   const showOverlay = ref<boolean>(false);
+
+  const navbarTargetRef = ref<HTMLElement | null>(null);
+  useSwipe(navbarTargetRef, {
+    onSwipeEnd(e, direction: UseSwipeDirection) {
+      if (direction === 'down') {
+        showDiscreteNavbar.value = false;
+      } else if (direction === 'up') {
+        showDiscreteNavbar.value = true;
+      }
+    }
+  });
 </script>
 
 <template>
-  <header>
+  <header ref="navbarTargetRef">
     <Menu
       class="transition-all duration-300"
       :class="{
@@ -50,20 +61,11 @@
     </Menu>
 
     <Menu
-      class="transition-all duration-300"
       :class="{
         'opacity-0 z-0': !showDiscreteNavbar,
         'opacity-100 z-20': showDiscreteNavbar
       }"
     >
-      <template #center>
-        <div
-          class="text-white rounded-3xl p-3 text-2xl backdrop-blur-xl bg-beige/5 cursor-pointer"
-          @click="showDiscreteNavbar = false"
-        >
-          <Icon name="target" class="w-6 h-6 text-white" />
-        </div>
-      </template>
     </Menu>
   </header>
 
