@@ -6,8 +6,8 @@
   import Tab from '@/components/tab-group/Tab.vue';
 
   import NavbarOverlayAbout from '@/features/navbar/NavbarOverlayAbout.vue';
-  import NavbarOverlayPreference from '@/features/navbar/NavbarOverlayPreference.vue';
   import NavbarOverlaySkin from '@/features/navbar/NavbarOverlaySkin.vue';
+  import NavbarOverlayPreference from '@/features/navbar/preference/NavbarOverlayPreference.vue';
 
   type Props = {
     show?: boolean;

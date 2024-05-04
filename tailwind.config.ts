@@ -1,3 +1,5 @@
+import flowbitePlugin from 'flowbite/plugin';
+
 /** @type {import('tailwindcss').Config} */ export default {
   content: ['./index.html', './src/**/*.{vue,ts}'],
   theme: {
@@ -19,7 +21,11 @@
       white: '#eaeaea',
       beige: '#eee8d5'
     },
-    extend: {}
+    extend: {
+      transitionProperty: {
+        height: 'height, max-height'
+      }
+    }
   },
-  plugins: []
+  plugins: [flowbitePlugin]
 };

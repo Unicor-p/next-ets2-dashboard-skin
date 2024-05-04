@@ -4,7 +4,7 @@
 
   import { useFullscreen } from '@/vendor/fullscreen/useFullscreen';
 
-  import Button from '@/components/Button.vue';
+  import ButtonText from '@/components/ButtonText.vue';
   import Menu from '@/components/Menu.vue';
 
   import NavbarOverlay from '@/features/navbar/NavbarOverlay.vue';
@@ -36,8 +36,8 @@
       }"
     >
       <template #left>
-        <Button icon="target" :expended="true">v2.0.0</Button>
-        <Button icon="target" :expended="true">v1.44.1.5</Button>
+        <ButtonText icon="target" :expended="true">v2.0.0</ButtonText>
+        <ButtonText icon="target" :expended="true">v1.44.1.5</ButtonText>
       </template>
       <template #center>
         <div
@@ -48,7 +48,7 @@
         </div>
       </template>
       <template #right>
-        <Button
+        <ButtonText
           icon="target"
           direction="right"
           :active="isOnFullscreen"
@@ -56,8 +56,8 @@
           @click="toggleFullscreen"
         >
           {{ $t('Fullscreen') }}
-        </Button>
-        <Button
+        </ButtonText>
+        <ButtonText
           icon="menu"
           direction="right"
           :expended="true"
@@ -65,7 +65,7 @@
           @click="showOverlay = !showOverlay"
         >
           {{ $t('Menu') }}
-        </Button>
+        </ButtonText>
       </template>
     </Menu>
 
@@ -75,6 +75,14 @@
         'opacity-100 z-20': showDiscreteNavbar
       }"
     >
+      <template #center>
+        <div
+          class="p-1 backdrop-blur-xl bg-beige/5 text-white rounded-3xl"
+          @click="showDiscreteNavbar = false"
+        >
+          &mldr;
+        </div>
+      </template>
     </Menu>
   </header>
 

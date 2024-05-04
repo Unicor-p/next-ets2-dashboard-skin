@@ -3,50 +3,27 @@
 
   type Props = {
     icon: string;
-    direction?: 'left' | 'right';
     as?: string;
     active?: boolean;
-    expended?: boolean;
+    type?: 'button' | 'submit' | 'reset';
   };
 
   const props = withDefaults(defineProps<Props>(), {
-    direction: 'left',
     as: 'button',
     active: false,
-    expended: false
+    type: 'button'
   });
 </script>
 
 <template>
   <component
     :is="as"
-    class="backdrop-blur-xl bg-beige/5 text-white rounded-3xl flex justify-center items-center text-base group overflow-hidden hover:bg-white/25 hover:cursor-pointer focus:bg-white/25 focus:cursor-pointer"
+    :type="type"
+    class="p-1.5 rounded-3xl focus:backdrop-blur-3xl focus:bg-beige/5 hover:backdrop-blur-3xl hover:bg-beige/5"
     :class="{
-      'flex-row-reverse': props.direction === 'right',
-      'bg-white/25': props.active
+      'bg-gradient-accent': props.active
     }"
   >
-    <div
-      class="rounded-full bg-white/35 flex justify-center items-center p-2 z-10"
-      :class="{
-        'bg-gradient-accent': props.active
-      }"
-    >
-      <Icon :name="props.icon" class="w-4 h-4 text-white" />
-    </div>
-    <div
-      class="flex justify-center items-center py-1 whitespace-nowrap opacity-0 w-0 transform transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0 group-focus:opacity-100 group-focus:translate-x-0 group-hover:w-32 group-focus:w-32"
-      :class="{
-        '-translate-x-[150%]': props.direction === 'left',
-        'translate-x-[150%]': props.direction === 'right',
-        'opacity-100 !translate-x-0 w-32': props.active,
-        'opacity-100 !translate-x-0 w-32 xl:opacity-0 xl:w-0':
-          props.expended && !props.active
-      }"
-    >
-      <span class="px-4">
-        <slot />
-      </span>
-    </div>
+    <Icon :name="props.icon" class="w-3.5 h-3.5 text-white" />
   </component>
 </template>
